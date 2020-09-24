@@ -13,8 +13,6 @@ static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
 static const unsigned int gappoh    = 10;
 static const unsigned int gappov    = 10;
-static unsigned int baralpha        = 0xd0;
-static unsigned int borderalpha     = OPAQUE;
 static const int smartgaps          = 1;
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -86,6 +84,7 @@ static const char *mutevol[] = { "/usr/bin/amixer", "set",   "Master", "toggle",
 static const char *toggleplay[] = { "/usr/bin/playerctl", "play-pause", NULL };
 static const char *playprev[] = { "/usr/bin/playerctl", "previous", NULL };
 static const char *playnext[] = { "/usr/bin/playerctl", "next", NULL };
+static const char *lockscreen[] = { "/usr/bin/bash", "~/.scripts/lock.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -107,6 +106,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space, spawn, {.v = toggleplay   } },
 	{ MODKEY,                       XK_o, spawn, {.v = playprev   } },
 	{ MODKEY,                       XK_p, spawn, {.v = playnext   } },
+	{ MODKEY|ShiftMask,                       XK_l, spawn, {.v = lockscreen   } },
 	// { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	// { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
