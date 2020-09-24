@@ -14,7 +14,7 @@ static const unsigned int gappiv    = 10;
 static const unsigned int gappoh    = 10;
 static const unsigned int gappov    = 10;
 static const int smartgaps          = 1;
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Inconsolata for Powerline:size=11" };
 static const char dmenufont[]       = "Inconsolata for Powerline:size=11";
