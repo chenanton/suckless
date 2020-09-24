@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Inconsolata:pixelsize=19:style=medium:antialias=true:autohint=true";
-static char *font2[] = { "Inconsolata For Powerline:pixelsize=19:style=medium:antialias=true:autohint=true" };
+static char *font = "Inconsolata:pixelsize=15:style=medium:antialias=true:autohint=true";
+static char *font2[] = { "Inconsolata For Powerline:pixelsize=15:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 5;
 
