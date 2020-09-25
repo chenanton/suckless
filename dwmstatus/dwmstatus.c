@@ -205,7 +205,7 @@ main(void)
 		tmutc = mktimes("%H:%M", tzutc);
 		tmbln = mktimes("KW %W %a %d %b %H:%M %Z %Y", tzberlin);
 		// tmyyc = mktimes("%x %I:%M %p", tzcalgary);
-		tmyyc = mktimes(" %m/%d/%Y |  %I:%M %p", tzcalgary);
+		tmyyc = mktimes(" %m/%d/%Y  %I:%M %p", tzcalgary);
 		t0 = gettemperature("/sys/devices/virtual/hwmon/hwmon0", "temp1_input");
 		t1 = gettemperature("/sys/devices/virtual/hwmon/hwmon2", "temp1_input");
 		t2 = gettemperature("/sys/devices/virtual/hwmon/hwmon4", "temp1_input");
