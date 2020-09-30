@@ -60,6 +60,7 @@ static const Layout layouts[] = {
 	{ "",      tile },    /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 //	{ "[M]",      monocle },
+	{ "",      bstackhoriz },	
 };
 
 /* key definitions */
@@ -107,9 +108,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_o, spawn, {.v = playprev   } },
 	{ MODKEY,                       XK_p, spawn, {.v = playnext   } },
 	{ MODKEY|ShiftMask,                       XK_l, spawn, {.v = lockscreen   } },
-	// { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	// { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_f,      fullscreen,     {0} },
 	// { MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_i,  setlayout,      {0} },
