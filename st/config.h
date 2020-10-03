@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Inconsolata for Powerline:pixelsize=15:style=medium:antialias=true:autohint=true";
-static char *font2[] = { "Inconsolata For Powerline:pixelsize=15:style=medium:antialias=true:autohint=true" };
+static char *font = "Inconsolata for Powerline:pixelsize=18:style=regular:antialias=true:autohint=true";
+static char *font2[] = { "Inconsolata For Powerline:pixelsize=18:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 5;
 
@@ -26,7 +26,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
+static float cwscale = 0.9;
 // static float cwscale = 0.34;
 static float chscale = 1.0;
 
@@ -110,7 +110,7 @@ char *termname = "st";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.5;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {

@@ -119,7 +119,7 @@ readfile(char *base, char *file)
 char *
 getbattery(char *base)
 {
-	char *co, status;
+	char *co, *status;
 	int descap, remcap;
 
 	descap = -1;
@@ -154,17 +154,17 @@ getbattery(char *base)
 
 	co = readfile(base, "status");
 	if (!strncmp(co, "Discharging", 11)) {
-		status = '-';
+		status = "";
 	} else if(!strncmp(co, "Charging", 8)) {
-		status = '+';
+		status = "";
 	} else {
-		status = '?';
+		status = "?";
 	}
 
 	if (remcap < 0 || descap < 0)
 		return smprintf("invalid");
 
-	return smprintf("%.0f%%%c", ((float)remcap / (float)descap) * 100, status);
+	return smprintf("%.0f%%%s", ((float)remcap / (float)descap) * 100, status);
 }
 
 char *
@@ -185,11 +185,11 @@ main(void)
 	char *status;
 	char *avgs;
 	char *bat;
-	char *bat1;
 	char *tmar;
 	char *tmutc;
 	char *tmbln;
-	char *tmyyc;
+	char *time_yyc;
+	char *date_yyc;
 	char *t0, *t1, *t2;
 
 	if (!(dpy = XOpenDisplay(NULL))) {
@@ -200,25 +200,25 @@ main(void)
 	for (;;sleep(60)) {
 		avgs = loadavg();
 		bat = getbattery("/sys/class/power_supply/BAT0");
-		bat1 = getbattery("/sys/class/power_supply/BAT1");
 		tmar = mktimes("%H:%M", tzargentina);
 		tmutc = mktimes("%H:%M", tzutc);
 		tmbln = mktimes("KW %W %a %d %b %H:%M %Z %Y", tzberlin);
-		// tmyyc = mktimes("%x %I:%M %p", tzcalgary);
-		tmyyc = mktimes(" %m/%d/%Y  %I:%M %p", tzcalgary);
+		time_yyc = mktimes(" %I:%M %p", tzcalgary);
+		date_yyc = mktimes(" %m/%d/%Y", tzcalgary);
 		t0 = gettemperature("/sys/devices/virtual/hwmon/hwmon0", "temp1_input");
 		t1 = gettemperature("/sys/devices/virtual/hwmon/hwmon2", "temp1_input");
 		t2 = gettemperature("/sys/devices/virtual/hwmon/hwmon4", "temp1_input");
 
-		status = smprintf("%s", tmyyc);
+		status = smprintf(" %s %s %s", bat, date_yyc, time_yyc);
 		setstatus(status);
 
 		free(t0);
 		free(t1);
 		free(t2);
 		free(avgs);
+		free(time_yyc);
+		free(date_yyc);
 		free(bat);
-		free(bat1);
 		free(tmar);
 		free(tmutc);
 		free(tmbln);
