@@ -15,9 +15,9 @@ static const unsigned int gappoh    = 10;
 static const unsigned int gappov    = 10;
 static const int smartgaps          = 1;
 static const int showbar            = 0;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Helvetica Neue:size=12:style=Regular" };
-static const char dmenufont[]       = "Inconsolata for Powerline:size=12";
+static const int topbar             = 0;        /* 0 means bottom bar */
+static const char *fonts[]          = { "Iosevka Term SS08:size=12:style=extended" };
+static const char dmenufont[]       = "Iosevka Term SS08:size=12:style=extended";
 static const char col_gray1[]       = "#080c14";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#a7b0b9";
@@ -26,7 +26,7 @@ static const char col_cyan[]        = "#282c34";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray4, col_cyan, col_gray2 },
 };
 
 /* tagging */

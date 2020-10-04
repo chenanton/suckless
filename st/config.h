@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Inconsolata for Powerline:pixelsize=18:style=regular:antialias=true:autohint=true";
+static char *font = "Iosevka Term SS08:pixelsize=16:style=extended:antialias=true:autohint=true";
 static char *font2[] = { "Inconsolata For Powerline:pixelsize=18:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 5;
@@ -26,7 +26,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 0.9;
+static float cwscale = 1.0;
 // static float cwscale = 0.34;
 static float chscale = 1.0;
 
@@ -134,7 +134,8 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#ff4455", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
-	"#282c34", /* 258 -> bg */
+	// "#24283b", /* 258 -> bg */
+	"#282a36",
 	"#f3f4f5", /* 259 -> fg */
 };
 

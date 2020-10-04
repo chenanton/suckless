@@ -26,7 +26,7 @@ char *tzvancouver = "Canada/Pacific";
 
 static Display *dpy;
 
-char *
+	char *
 smprintf(char *fmt, ...)
 {
 	va_list fmtargs;
@@ -50,13 +50,13 @@ smprintf(char *fmt, ...)
 	return ret;
 }
 
-void
+	void
 settz(char *tzname)
 {
 	setenv("TZ", tzname, 1);
 }
 
-char *
+	char *
 mktimes(char *fmt, char *tzname)
 {
 	char buf[129];
@@ -77,14 +77,14 @@ mktimes(char *fmt, char *tzname)
 	return smprintf("%s", buf);
 }
 
-void
+	void
 setstatus(char *str)
 {
 	XStoreName(dpy, DefaultRootWindow(dpy), str);
 	XSync(dpy, False);
 }
 
-char *
+	char *
 loadavg(void)
 {
 	double avgs[3];
@@ -95,7 +95,7 @@ loadavg(void)
 	return smprintf("%.2f %.2f %.2f", avgs[0], avgs[1], avgs[2]);
 }
 
-char *
+	char *
 readfile(char *base, char *file)
 {
 	char *path, line[513];
@@ -116,7 +116,7 @@ readfile(char *base, char *file)
 	return smprintf("%s", line);
 }
 
-char *
+	char *
 getbattery(char *base)
 {
 	char *co, *status;
@@ -152,9 +152,15 @@ getbattery(char *base)
 	sscanf(co, "%d", &remcap);
 	free(co);
 
+	float batpercent = ((float) remcap / (float) descap) * 100;
+
 	co = readfile(base, "status");
 	if (!strncmp(co, "Discharging", 11)) {
-		status = "";
+		if (batpercent > 87.5) status = "";
+		else if (batpercent > 62.5) status = "";
+		else if (batpercent > 37.5) status = "";
+		else if (batpercent > 12.5) status = "";
+		else status = "";
 	} else if(!strncmp(co, "Charging", 8)) {
 		status = "";
 	} else {
@@ -164,10 +170,10 @@ getbattery(char *base)
 	if (remcap < 0 || descap < 0)
 		return smprintf("invalid");
 
-	return smprintf("%.0f%%%s", ((float)remcap / (float)descap) * 100, status);
+	return smprintf("%s %.0f%%", status, batpercent);
 }
 
-char *
+	char *
 gettemperature(char *base, char *sensor)
 {
 	char *co;
@@ -178,8 +184,8 @@ gettemperature(char *base, char *sensor)
 	return smprintf("%02.0f°C", atof(co) / 1000);
 }
 
-	
-int
+
+	int
 main(void)
 {
 	char *status;
@@ -204,12 +210,12 @@ main(void)
 		tmutc = mktimes("%H:%M", tzutc);
 		tmbln = mktimes("KW %W %a %d %b %H:%M %Z %Y", tzberlin);
 		time_yyc = mktimes(" %I:%M %p", tzcalgary);
-		date_yyc = mktimes(" %m/%d/%Y", tzcalgary);
+		date_yyc = mktimes(" %m/%d/%Y", tzcalgary);
 		t0 = gettemperature("/sys/devices/virtual/hwmon/hwmon0", "temp1_input");
 		t1 = gettemperature("/sys/devices/virtual/hwmon/hwmon2", "temp1_input");
 		t2 = gettemperature("/sys/devices/virtual/hwmon/hwmon4", "temp1_input");
 
-		status = smprintf(" %s %s %s", bat, date_yyc, time_yyc);
+		status = smprintf("%s %s %s", bat, date_yyc, time_yyc);
 		setstatus(status);
 
 		free(t0);
