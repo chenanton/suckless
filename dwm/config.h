@@ -18,24 +18,25 @@ static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Iosevka Term SS08:size=12:style=extended" };
 static const char dmenufont[]       = "Iosevka Term SS08:size=12:style=extended";
-static const char col_gray1[]       = "#080c14";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#a7b0b9";
-static const char col_gray4[]       = "#f3f4f5";
-static const char col_cyan[]        = "#282c34";
+static const char col_gray1[]       = "#181a26";
+static const char col_gray2[]       = "#181a26";
+static const char col_gray3[]       = "#838485";
+static const char col_gray4[]       = "#d3d4d5";
+static const char col_cyan[]        = "#282a36";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_cyan, col_gray2 },
+	[SchemeNorm] = { col_gray3, col_gray2, col_gray1 },
+	[SchemeSel]  = { col_gray4, col_gray2, col_gray2 },
 };
 
 /* tagging */
 static const char *tags[] = { 
-	"",
-	"",
-	"",
-	"",
-	""
+//	"",
+//	"",
+//	"",
+//	"",
+//	""
+	"1", "2", "3", "4", "5"
 };
 
 static const Rule rules[] = {
@@ -55,7 +56,8 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
+	//{ "",      tile },    /* first entry is default */
+	{ "==",      tile },    /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 //	{ "[M]",      monocle },
 	{ "",      bstackhoriz },	

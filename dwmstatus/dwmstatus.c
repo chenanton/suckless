@@ -170,7 +170,8 @@ getbattery(char *base)
 	if (remcap < 0 || descap < 0)
 		return smprintf("invalid");
 
-	return smprintf("%s %.0f%%", status, batpercent);
+	// return smprintf("%s %.0f%%", status, batpercent);
+	return smprintf("%.0f%%", batpercent);
 }
 
 	char *
@@ -209,13 +210,15 @@ main(void)
 		tmar = mktimes("%H:%M", tzargentina);
 		tmutc = mktimes("%H:%M", tzutc);
 		tmbln = mktimes("KW %W %a %d %b %H:%M %Z %Y", tzberlin);
-		time_yyc = mktimes(" %I:%M %p", tzcalgary);
-		date_yyc = mktimes(" %m/%d/%Y", tzcalgary);
+		// time_yyc = mktimes(" %I:%M %p", tzcalgary);
+		time_yyc = mktimes("%I:%M %p", tzcalgary);
+		//date_yyc = mktimes(" %m/%d/%Y", tzcalgary);
+		date_yyc = mktimes("%m/%d/%Y", tzcalgary);
 		t0 = gettemperature("/sys/devices/virtual/hwmon/hwmon0", "temp1_input");
 		t1 = gettemperature("/sys/devices/virtual/hwmon/hwmon2", "temp1_input");
 		t2 = gettemperature("/sys/devices/virtual/hwmon/hwmon4", "temp1_input");
 
-		status = smprintf("%s %s %s", bat, date_yyc, time_yyc);
+		status = smprintf("%s | %s | %s", bat, date_yyc, time_yyc);
 		setstatus(status);
 
 		free(t0);
