@@ -4,7 +4,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
-static const unsigned int user_bh 	= 25;
+static const unsigned int user_bh 	= 20;
 static const unsigned int horizpadbar = 0;
 static const unsigned int vertpadbar = 20;
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -16,8 +16,8 @@ static const unsigned int gappov    = 10;
 static const int smartgaps          = 1;
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Term SS08:size=12:style=extended" };
-static const char dmenufont[]       = "Iosevka Term SS08:size=12:style=extended";
+static const char *fonts[]          = { "Iosevka Term SS08:size=10:style=extended" };
+static const char dmenufont[]       = "Iosevka Term SS08:size=10:style=extended";
 static const char col_gray1[]       = "#181a26";
 static const char col_gray2[]       = "#181a26";
 static const char col_gray3[]       = "#838485";
@@ -31,12 +31,12 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { 
-//	"",
-//	"",
-//	"",
-//	"",
-//	""
-	"1", "2", "3", "4", "5"
+	"",
+	"",
+	"",
+	"",
+	""
+//	"1", "2", "3", "4", "5"
 };
 
 static const Rule rules[] = {
@@ -56,8 +56,8 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	//{ "",      tile },    /* first entry is default */
-	{ "==",      tile },    /* first entry is default */
+	{ "",      tile },    /* first entry is default */
+	// { "==",      tile },    /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 //	{ "[M]",      monocle },
 	{ "",      bstackhoriz },	
