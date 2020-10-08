@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term SS08:pixelsize=16:style=extended:antialias=true:autohint=true";
-static char *font2[] = { "Inconsolata For Powerline:pixelsize=18:style=medium:antialias=true:autohint=true" };
+static char *font = "Iosevka Term SS08:pixelsize=13:style=extended:antialias=true:autohint=true";
+static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static int borderpx = 5;
+static int borderpx = 4;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -110,7 +110,7 @@ char *termname = "st";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 1;
+float alpha = 0.85;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -128,14 +128,15 @@ static const char *colorname[] = {
 	"#f1c40f", // 11
 	"#3498db", // 12
 	"#9b59b6", // 13
-	"#2aa198", // 14
+	"#3ab1A8", // 14
 	"#ecf0f1", // 15
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#ff4455", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
 	// "#24283b", /* 258 -> bg */
-	"#282a36",
+	// "#282a36", // Dracula
+	"#282c34", // One dark
 	"#f3f4f5", /* 259 -> fg */
 };
 
