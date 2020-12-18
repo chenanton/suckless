@@ -18,11 +18,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Iosevka Term SS08:size=10:style=extended" };
 static const char dmenufont[]       = "Iosevka Term SS08:size=10:style=extended";
-static const char col_gray1[]       = "#282c34";
-static const char col_gray2[]       = "#282c34";
+static const char col_gray1[]       = "#24283b";
+static const char col_gray2[]       = "#24283b";
 static const char col_gray3[]       = "#838485";
 static const char col_gray4[]       = "#d3d4d5";
-static const char col_cyan[]        = "#282c34";
+static const char col_cyan[]        = "#24283b";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray2, col_gray1 },
