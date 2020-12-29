@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Term SS08:pixelsize=13:style=extended:antialias=true:autohint=true";
+static char *font = "Iosevka Custom:pixelsize=13:antialias=true:autohint=true";
 /* static char *font = "Inconsolata for Powerline:pixelsize=15:style=extended:antialias=true:autohint=true"; */
 static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
@@ -111,7 +111,7 @@ char *termname = "st";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 1;
+float alpha = 0.9;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -135,9 +135,9 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#ff4455", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
-	// "#24283b", /* 258 -> bg */
+	"#24283b", /* 258 -> bg */
 	// "#282a36", // Dracula
-	"#282c34", // One dark
+	// "#282c34", // One dark
 	"#f3f4f5", /* 259 -> fg */
 };
 
@@ -156,7 +156,6 @@ unsigned int defaultrcs = 257;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
 

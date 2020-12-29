@@ -6,8 +6,8 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Iosevka Custom:pixelsize=13:antialias=true:autohint=true";
-/* static char *font = "Ligconsolata:pixelsize=12:antialias=true:autohint=true"; */
-static char *font2[] = { "Inconsolata For Powerline:pixelsize=12:style=medium:antialias=true:autohint=true" };
+/* static char *font = "Inconsolata for Powerline:pixelsize=15:style=extended:antialias=true:autohint=true"; */
+static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 4;
 
@@ -156,7 +156,6 @@ unsigned int defaultrcs = 257;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
 

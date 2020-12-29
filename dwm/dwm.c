@@ -730,7 +730,7 @@ drawbar(Monitor *m)
 	if (m == selmon) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeSel]);
 		sw = TEXTW(stext);
-		drw_text(drw, m->ww - sw, 0, sw, bh + 3, lrpad / 2, stext, 0);
+		drw_text(drw, m->ww - sw, 0, sw, bh + 2, lrpad / 2, stext, 0);
 	}
 
 	for (c = m->clients; c; c = c->next) {
@@ -744,12 +744,12 @@ drawbar(Monitor *m)
 
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		drw_text(drw, x, 0, w, bh + 3, lrpad / 2, tags[i], urg & 1 << i);
+		drw_text(drw, x, 0, w, bh + 2, lrpad / 2, tags[i], urg & 1 << i);
 		x += w;
 	}
 	w = blw = TEXTW(m->ltsymbol);
 	drw_setscheme(drw, scheme[SchemeNorm]);
-	x = drw_text(drw, x, 0, w, bh + 3, lrpad / 2, m->ltsymbol, 0);
+	x = drw_text(drw, x, 0, w, bh + 2, lrpad / 2, m->ltsymbol, 0);
 
 	if ((w = m->ww - sw - x) > bh) {
 		if (m->sel) {
@@ -757,7 +757,7 @@ drawbar(Monitor *m)
 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
 			// TITLE CENTER drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, "", 0);
-			// TITLE ALIGNED LEFT drw_text(drw, x, 0, w, bh + 3, mid, m->sel->name, 0);
+			// TITLE ALIGNED LEFT drw_text(drw, x, 0, w, bh + 2, mid, m->sel->name, 0);
 			if (m->sel->isfloating)
 				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
