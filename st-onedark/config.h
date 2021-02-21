@@ -5,10 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Custom Narrow:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Iosevka:size=11:antialias=true:autohint=true:weight=medium:minspace=false";
 /* static char *font = "Ligconsolata:pixelsize=14:antialias=true:autohint=true"; */
 /* static char *font = "Inconsolata for Powerline:pixelsize=15:style=extended:antialias=true:autohint=true"; */
-static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" };
+/* static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" }; */
+static char *font2[] = { "Iosevka:pixelsize=14:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
 static int borderpx = 1;
 
@@ -30,7 +31,7 @@ char *vtiden = "\033[?6c";
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
 // static float cwscale = 0.34;
-static float chscale = 1;
+static float chscale = 0.95;
 
 /*
  * word delimiter string
@@ -79,8 +80,8 @@ static unsigned int cursorthickness = 2;
  *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
  * 0: disable (render all U25XX glyphs normally from the font).
  */
-const int boxdraw = 1;
-const int boxdraw_bold = 1;
+const int boxdraw = 0;
+const int boxdraw_bold = 0;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
 const int boxdraw_braille = 1;
@@ -158,7 +159,7 @@ unsigned int defaultrcs = 257;
  * 4: Underline ("_")
  * 6: Bar ("|")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
