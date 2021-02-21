@@ -18,11 +18,11 @@ static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Iosevka Custom Narrow:size=11" };
 static const char dmenufont[]       = "Iosevka Custom Narrow:size=11";
-static const char col_gray1[]       = "#24283b";
-static const char col_gray2[]       = "#24283b";
+static const char col_gray1[]       = "#2c323c";
+static const char col_gray2[]       = "#2c323c";
 static const char col_gray3[]       = "#838495";
 static const char col_gray4[]       = "#d3d4e5";
-static const char col_cyan[]        = "#24283b";
+static const char col_cyan[]        = "#2c323c";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray2, col_gray1 },
@@ -31,13 +31,8 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { 
-	"",
-	"",
-	"",
-	"",
-	"",
-	""
-//	"1", "2", "3", "4", "5"
+    "Home", "Dev", "Web", "Media", "Games", "Misc"
+    /* "1", "2", "3", "4", "5" */
 };
 
 static const Rule rules[] = {
@@ -51,7 +46,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 

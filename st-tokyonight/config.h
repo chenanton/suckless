@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Iosevka Custom:pixelsize=13:antialias=true:autohint=true";
+static char *font = "Iosevka Custom Narrow:pixelsize=14:antialias=true:autohint=true";
 /* static char *font = "Inconsolata for Powerline:pixelsize=15:style=extended:antialias=true:autohint=true"; */
 static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static int borderpx = 4;
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -29,7 +29,7 @@ char *vtiden = "\033[?6c";
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
 // static float cwscale = 0.34;
-static float chscale = 1.0;
+static float chscale = 1;
 
 /*
  * word delimiter string
@@ -111,7 +111,7 @@ char *termname = "st";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.9;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {

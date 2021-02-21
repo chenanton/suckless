@@ -7,37 +7,37 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int user_bh 	= 20;
 static const unsigned int horizpadbar = 0;
 static const unsigned int vertpadbar = 20;
-static const unsigned int snap      = 5;       /* snap pixel */
-static const unsigned int cornerrad = 0;
+static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int cornerrad = 4;
 static const unsigned int gappih    = 10;
 static const unsigned int gappiv    = 10;
 static const unsigned int gappoh    = 10;
 static const unsigned int gappov    = 10;
-static const int smartgaps          = 0;
+static const int smartgaps          = 1;
 static const int showbar            = 0;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Custom Narrow:size=11" };
-static const char dmenufont[]       = "Iosevka Custom Narrow:size=11";
-static const char col_gray1[]       = "#24283b";
-static const char col_gray2[]       = "#24283b";
-static const char col_gray3[]       = "#838495";
-static const char col_gray4[]       = "#d3d4e5";
-static const char col_cyan[]        = "#24283b";
+static const int topbar             = 0;        /* 0 means bottom bar */
+static const char *fonts[]          = { "Inconsolata for Powerline:size=11" };
+static const char dmenufont[]       = "Inconsolata for Powerline:size=11";
+static const char col_gray1[]       = "#080c14";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#a7b0b9";
+static const char col_gray4[]       = "#f3f4f5";
+static const char col_cyan[]        = "#282c34";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray2, col_gray1 },
-	[SchemeSel]  = { col_gray4, col_gray2, col_gray2 },
+	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
+	[SchemeSel]  = { col_gray4, col_gray1, col_gray2 },
 };
 
 /* tagging */
 static const char *tags[] = { 
-	"",
+	"",
 	"",
 	"",
 	"",
-	"",
+	// "",
+//	"",
 	""
-//	"1", "2", "3", "4", "5"
 };
 
 static const Rule rules[] = {
@@ -51,17 +51,15 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "",      tile },    /* first entry is default */
-	// { "==",      tile },    /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
-	{ "",      bstackhoriz },	
 };
 
 /* key definitions */
@@ -80,14 +78,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
-/* media keys */
 static const char *upvol[]   = { "/usr/bin/amixer", "set", "Master", "5%+",     NULL };
 static const char *downvol[] = { "/usr/bin/amixer", "set", "Master", "5%-",     NULL };
 static const char *mutevol[] = { "/usr/bin/amixer", "set",   "Master", "toggle",  NULL };
 static const char *toggleplay[] = { "/usr/bin/playerctl", "play-pause", NULL };
 static const char *playprev[] = { "/usr/bin/playerctl", "previous", NULL };
 static const char *playnext[] = { "/usr/bin/playerctl", "next", NULL };
-static const char *lockscreen[] = { "/usr/bin/bash", "~/.scripts/lock.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -109,11 +105,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_space, spawn, {.v = toggleplay   } },
 	{ MODKEY,                       XK_o, spawn, {.v = playprev   } },
 	{ MODKEY,                       XK_p, spawn, {.v = playnext   } },
-	{ MODKEY|ShiftMask,                       XK_l, spawn, {.v = lockscreen   } },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	// { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	// { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_u,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_f,      fullscreen,     {0} },
 	// { MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_i,  setlayout,      {0} },

@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "Iosevka Custom Narrow:pixelsize=14:antialias=true:autohint=true"; */
-static char *font = "Ligconsolata:pixelsize=14:antialias=true:autohint=true";
+static char *font = "Iosevka Custom Narrow:pixelsize=14:antialias=true:autohint=true";
+/* static char *font = "Ligconsolata:pixelsize=14:antialias=true:autohint=true"; */
 /* static char *font = "Inconsolata for Powerline:pixelsize=15:style=extended:antialias=true:autohint=true"; */
 static char *font2[] = { "Inconsolata For Powerline:pixelsize=14:style=medium:antialias=true:autohint=true" };
 // static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
@@ -28,8 +28,8 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-/* static float cwscale = 1.0; */
-static float cwscale = 0.34;
+static float cwscale = 1.0;
+// static float cwscale = 0.34;
 static float chscale = 1;
 
 /*
@@ -134,11 +134,11 @@ static const char *colorname[] = {
 	"#ecf0f1", // 15
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#ff4455", /* 256 -> cursor */
+	"#f3f4f5", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
 	/* "#24283b", /1* 258 -> bg *1/ */
 	// "#282a36", // Dracula
-	"#282c34", // One dark
+	"#2c323c", // One dark
 	"#f3f4f5", /* 259 -> fg */
 };
 
@@ -158,7 +158,7 @@ unsigned int defaultrcs = 257;
  * 4: Underline ("_")
  * 6: Bar ("|")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
