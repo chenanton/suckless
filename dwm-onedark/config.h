@@ -16,8 +16,8 @@ static const unsigned int gappov    = 10;
 static const int smartgaps          = 0;
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka:size=11:antialias=true:autohint=true:weight=medium:minspace=false" };
-static const char dmenufont[]       = "Iosevka:size=11:antialias=true:autohint=true:weight=medium:minspace=false";
+static const char *fonts[]          = { "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true";
 static const char col_gray1[]       = "#2c323c";
 static const char col_gray2[]       = "#2c323c";
 static const char col_gray3[]       = "#838495";
