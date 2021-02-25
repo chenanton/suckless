@@ -855,6 +855,18 @@ xclearwin(void)
 	xclear(0, 0, win.w, win.h);
 }
 
+void
+xclearwin(void)
+{
+	xclear(0, 0, win.w, win.h);
+}
+
+void
+xclearwin(void)
+{
+	xclear(0, 0, win.w, win.h);
+}
+
 
 void
 xhints(void)
