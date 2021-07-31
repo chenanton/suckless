@@ -16,23 +16,28 @@ static const unsigned int gappov    = 10;
 static const int smartgaps          = 0;
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true" };
-static const char dmenufont[]       = "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true";
-static const char col_gray1[]       = "#101620";
-static const char col_gray2[]       = "#2c323c";
+static const char *fonts[]          = { "Iosevka Custom Narrow:size=11" };
+static const char dmenufont[]       = "Iosevka Custom Narrow:size=11";
+static const char col_gray1[]       = "#24283b";
+static const char col_gray2[]       = "#24283b";
 static const char col_gray3[]       = "#838495";
 static const char col_gray4[]       = "#d3d4e5";
-static const char col_cyan[]        = "#2c323c";
+static const char col_cyan[]        = "#24283b";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray2, col_gray2 },
+	[SchemeNorm] = { col_gray3, col_gray2, col_gray1 },
 	[SchemeSel]  = { col_gray4, col_gray2, col_gray2 },
 };
 
 /* tagging */
 static const char *tags[] = { 
-    /* "Home", "", "", "Media", "Games", "Misc" */
-    "甲", "乙", "丙", "丁", "戊", "己"
+	"",
+	"",
+	"",
+	"",
+	"",
+	""
+//	"1", "2", "3", "4", "5"
 };
 
 static const Rule rules[] = {
@@ -46,7 +51,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
@@ -68,7 +73,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -82,7 +87,7 @@ static const char *mutevol[] = { "/usr/bin/amixer", "set",   "Master", "toggle",
 static const char *toggleplay[] = { "/usr/bin/playerctl", "play-pause", NULL };
 static const char *playprev[] = { "/usr/bin/playerctl", "previous", NULL };
 static const char *playnext[] = { "/usr/bin/playerctl", "next", NULL };
-static const char *lockscreen[] = { "/usr/bin/zsh", "~/.scripts/lock.sh", NULL };
+static const char *lockscreen[] = { "/usr/bin/bash", "~/.scripts/lock.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
