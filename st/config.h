@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "Iosevka:pixelsize=14:antialias=true:autohint=true:weight=medium"; */
-static char *font = "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true";
+/* static char *font = "Iosevka:pixelsize=20:antialias=true:autohint=true:weight=medium"; */
+static char *font = "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=false:hinting=true";
 /* static char *font = "Helvetica:pixelsize=14:style=regular"; */
 static int borderpx = 0;
 
@@ -36,7 +36,8 @@ static float chscale = 1.0;
  *
  * More advanced example: L" `'\"()[]{}"
  */
-wchar_t *worddelimiters = L" ";
+/* wchar_t *worddelimiters = L" "; */
+wchar_t *worddelimiters = L" `'\"()[]{}";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -105,7 +106,8 @@ static const char *colorname[] = {
 	"#2980b9", // 4
 	"#8e44ad", // 5
 	"#16a085", // 6
-	"#bdc3c7", // 7
+	/* "#bdc3c7", // 7 */
+	"#abb2bf", // 7
 
 	/* 8 bright colors */
 	"#34495e", // 8
