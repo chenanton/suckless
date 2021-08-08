@@ -5,9 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/* static char *font = "Iosevka:pixelsize=20:antialias=true:autohint=true:weight=medium"; */
-static char *font = "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=false:hinting=true";
-/* static char *font = "Helvetica:pixelsize=14:style=regular"; */
+static char *font = "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=false:hinting=true"; // laptop
 static int borderpx = 0;
 
 /*
