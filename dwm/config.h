@@ -4,24 +4,24 @@
 
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
-static const unsigned int user_bh 	= 20;
+static const unsigned int user_bh 	= 15;
 static const unsigned int horizpadbar = 0;
 static const unsigned int vertpadbar = 20;
 static const unsigned int snap      = 5;       /* snap pixel */
 static const unsigned int cornerrad = 0;
-static const unsigned int gappih    = 10;
-static const unsigned int gappiv    = 10;
-static const unsigned int gappoh    = 10;
-static const unsigned int gappov    = 10;
+static const unsigned int gappih    = 15;
+static const unsigned int gappiv    = 15;
+static const unsigned int gappoh    = 15;
+static const unsigned int gappov    = 15;
 static const int smartgaps          = 0;
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 /* DESKTOP */
-/* static const char *fonts[]          = { "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true" }; */
-/* static const char dmenufont[]       = "PragmataPro Mono Liga:style=regular:pi225 35xelsize=14:antialias=true:autohint=true"; */
+static const char *fonts[]          = { "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true" };
+static const char dmenufont[]       = "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true";
 /* LAPTOP */
-static const char *fonts[]          = { "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=true" };
-static const char dmenufont[]       = "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=true";
+/* static const char *fonts[]          = { "PragmataPro Mono Liga:style=regular:pixelsize=14:antialias=true:autohint=true" }; */
+/* static const char dmenufont[]       = "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=true"; */
 static const char col_gray1[]       = "#101620";
 static const char col_gray2[]       = "#2c323c";
 static const char col_gray3[]       = "#838495";
@@ -88,19 +88,19 @@ static const char *downbright[] = { "/bin/zsh", "/home/anton/.local/bin/backligh
 static const char *upvol[]   = { "/usr/bin/amixer", "set", "Master", "5%+",     NULL };
 static const char *downvol[] = { "/usr/bin/amixer", "set", "Master", "5%-",     NULL };
 static const char *mutevol[] = { "/usr/bin/amixer", "set",   "Master", "toggle",  NULL };
-static const char *toggleplay[] = { "/usr/bin/playerctl", "play-pause", NULL };
-static const char *playprev[] = { "/usr/bin/playerctl", "previous", NULL };
-static const char *playnext[] = { "/usr/bin/playerctl", "next", NULL };
+static const char *toggleplay[] = { "/home/anton/.cargo/bin/spt", "pb", "-t", NULL };
+static const char *playprev[] = { "/home/anton/.cargo/bin/spt", "pb", "-p", NULL };
+static const char *playnext[] = { "/home/anton/.cargo/bin/spt", "pb", "-n", NULL };
 
 /* misc commands */
 static const char *lockscreen[] = { "/usr/bin/physlock", NULL };
-static const char *st_smallfont[] = { "/home/anton/.local/bin/st-smallfont", NULL };
+static const char *st_smallfont[] = { "/home/anton/.local/bin/st-small", NULL };
 static const char *exitdwm[] = { "/usr/bin/killall", "xinit", NULL };
 
 static Key keys[] = {
 	/* modifier                     key			    function        argument */
 	{ MODKEY,                       XK_d,      		    spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,             XK_Return, 		    spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_t,			    spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask|ShiftMask, XK_Return, 		    spawn,          {.v = smalltermcmd } },
 	{ MODKEY,                       XK_b,      		    togglebar,      {0} },
 	{ MODKEY,                       XK_j,      		    focusstack,     {.i = +1 } },
@@ -113,9 +113,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    		    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      		    killclient,     {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,			    spawn,	    {.v = exitdwm   } },
+	{ 0,				XF86XK_AudioPlay,	    spawn,	    {.v = toggleplay   } },
 	{ MODKEY,                       XK_space,		    spawn,	    {.v = toggleplay   } },
-	{ MODKEY,                       XK_o,			    spawn, 	    {.v = playprev   } },
-	{ MODKEY,                       XK_p, 	    		    spawn, 	    {.v = playnext   } },
+	{ MODKEY,                       XK_Left,		    spawn, 	    {.v = playprev   } },
+	{ MODKEY,                       XK_Right, 	    	    spawn, 	    {.v = playnext   } },
 	{ MODKEY|ShiftMask,             XK_l, 	    		    spawn, 	    {.v = lockscreen   } },
 	{ 0,				XF86XK_AudioLowerVolume,    spawn,	    {.v = downvol } },
 	{ 0,                       	XF86XK_AudioMute,	    spawn,	    {.v = mutevol } },
