@@ -5,7 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "PragmataPro Mono Liga:style=regular:pixelsize=16:antialias=true:autohint=false:hinting=true"; // laptop
+static char *font = "PragmataPro Mono:style=regular:pixelsize=14:antialias=true:autohint=false:hinting=true";
+/* static char *font = "PragmataPro Mono:style=regular"; */
 static int borderpx = 0;
 
 /*
@@ -27,7 +28,7 @@ char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
-static float chscale = 1.0;
+static float chscale = 0.9;
 
 /*
  * word delimiter string
@@ -96,26 +97,26 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+
 	/* 8 normal colors */
-	"#2c3e50", // 0
-	"#c0392b", // 1
-	"#27ae60", // 2
-	"#f39c12", // 3
-	"#2980b9", // 4
-	"#8e44ad", // 5
-	"#16a085", // 6
-	/* "#bdc3c7", // 7 */
-	"#abb2bf", // 7
+	"#2c3e50",	// 0
+	"#c0392b", 	// 1
+	"#27ae60", 	// 2
+	"#f39c12", 	// 3
+	"#2980b9", 	// 4
+	"#8e44ad", 	// 5
+	"#16a085", 	// 6
+	"#abb2bf", 	// 7
 
 	/* 8 bright colors */
-	"#34495e", // 8
-	"#ff4455", // 9
-	"#2ecc71", // 10 
-	"#f1c40f", // 11
-	"#3498db", // 12
-	"#9b59b6", // 13
-	"#3ab1A8", // 14
-	"#ecf0f1", // 15
+	"#34495e",	// 8
+	"#ff4455", 	// 9
+	"#2ecc71", 	// 10 
+	"#f1c40f", 	// 11
+	"#3498db", 	// 12
+	"#9b59b6", 	// 13
+	"#3ab1A8", 	// 14
+	"#ecf0f1", 	// 15
 
 	[255] = 0,
 
